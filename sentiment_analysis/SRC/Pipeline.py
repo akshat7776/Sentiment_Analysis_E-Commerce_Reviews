@@ -1,7 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Try relative imports first (for package usage), then absolute imports (for direct execution)
 try:
     from .data_preprocessing import prepare_dataset
     from .Vader import run_vader_analysis
@@ -47,15 +46,13 @@ if __name__ == "__main__":
     import os
     import sys
     
-    print("🚀 Sentiment Analysis Pipeline")
+    print("Sentiment Analysis Pipeline")
     print("=" * 40)
     
-    # Check if user provided a file path as argument
     if len(sys.argv) > 1:
         csv_file = sys.argv[1]
-        print(f"📂 Using provided file: {csv_file}")
+        print(f"Using provided file: {csv_file}")
     else:
-        # Try to find sample data
         possible_files = [
             "../../outputs/sample_of_data.csv",
             "../outputs/sample_of_data.csv", 
@@ -70,36 +67,35 @@ if __name__ == "__main__":
                 break
         
         if csv_file:
-            print(f"📂 Using sample file: {csv_file}")
+            print(f"Using sample file: {csv_file}")
         else:
-            print("❌ No CSV file found!")
-            print("💡 Usage:")
+            print("No CSV file found!")
+            print("Usage:")
             print("   python Pipeline.py 'your_file.csv'")
             print("   Or place 'sample_of_data.csv' in current directory")
             sys.exit(1)
     
     # Check if file exists
     if not os.path.exists(csv_file):
-        print(f"❌ File not found: {csv_file}")
+        print(f"File not found: {csv_file}")
         sys.exit(1)
     
     try:
-        print("\n🔄 Running sentiment analysis...")
+        print("\nRunning sentiment analysis...")
         df = run_complete_analysis(csv_file)
-        print(f"✅ Processed {len(df)} reviews")
+        print(f"Processed {len(df)} reviews")
         
-        print("\n📊 Generating visualizations...")
+        print("\nGenerating visualizations...")
         plot_sentiment_comparison(df)
         
-        print("\n📋 Generating report...")
+        print("\nGenerating report...")
         generate_report(df)
         
-        # Save results
-        output_file = "pipeline_results.csv"
+        output_file = "processed_data.csv"
         df.to_csv(output_file, index=False)
-        print(f"\n💾 Results saved to: {output_file}")
-        print("🎉 Analysis complete!")
+        print(f"\nResults saved to: {output_file}")
+        print("Analysis complete!")
         
     except Exception as e:
-        print(f"\n❌ Error: {str(e)}")
-        print("💡 Make sure your CSV has 'Review Text' and 'Rating' columns")
+        print(f"\nError: {str(e)}")
+        print("Make sure your CSV has 'Review Text' and 'Rating' columns")
