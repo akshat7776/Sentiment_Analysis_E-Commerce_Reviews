@@ -1,30 +1,6 @@
 # Sentiment Analysis on E-Commerce Reviews
 
-![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Status](https://img.shields.io/badge/status-active-success.svg)
-![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)
-
 A comprehensive **sentiment analysis pipeline** for e-commerce reviews using multiple state-of-the-art approaches: **VADER** (lexicon-based), **RoBERTa** (transformer-based), and **Rating-based** sentiment classification.
-
-## Table of Contents
-
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Requirements](#requirements)
-- [Quick Start](#quick-start)
-- [What You'll Get](#what-youll-get)
-- [Methodology](#methodology)
-- [Visualizations](#visualizations)
-- [API Usage](#api-usage)
-- [Configuration & Customization](#configuration--customization)
-- [Dataset Information](#dataset-information)
-- [Performance & Compatibility](#performance--compatibility)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [License](#license)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Features
 
@@ -38,7 +14,6 @@ A comprehensive **sentiment analysis pipeline** for e-commerce reviews using mul
   - Text feature extraction and normalization
   - Sentiment distribution visualization
   - Method comparison and correlation analysis
-  - Automated reporting with statistics
 
 - **Production Ready**:
   - Modular architecture with clean separation of concerns
@@ -46,7 +21,7 @@ A comprehensive **sentiment analysis pipeline** for e-commerce reviews using mul
   - Sample data included for immediate testing
   - Comprehensive error handling and user guidance
 
-## Project Structure
+## Folder Structure
 
 ```
 ├── README.md                    # Project documentation
@@ -69,26 +44,13 @@ A comprehensive **sentiment analysis pipeline** for e-commerce reviews using mul
         └── Pipeline.py         # Main execution pipeline
 ```
 
-## Requirements
-
-- Python 3.8 or higher
-- Dependencies listed in `requirements.txt`
-- Internet connection for downloading NLTK data and transformer models
-
 ## Quick Start
 
 ### 1. Installation
 
-**Prerequisites:**
-- Python 3.8 or higher
-- pip package manager
-- Git (for cloning)
-
-**Install the project:**
-
 ```bash
 # Clone the repository
-git clone https://github.com/akshat7776/Sentiment_Analysis_E-Commerce_Reviews.git
+git clone https://github.com/akshat7776/Sentiment_Analysis_E-Commerce_Reviews.git Sentiment_Analysis_E-Commerce_Reviews
 cd Sentiment_Analysis_E-Commerce_Reviews
 
 # Install dependencies
@@ -165,7 +127,7 @@ positive    80.0%
 neutral     12.0%
 negative     8.0%
 
-Results saved to: pipeline_results.csv
+Results saved to: processed_data.csv
 Analysis complete!
 ```
 
@@ -265,72 +227,3 @@ The project includes a sample dataset (`outputs/sample_of_data.csv`) with 50 rea
 - **VADER**: ~1000 reviews/second (very fast)
 - **RoBERTa**: ~10-50 reviews/second (depends on hardware)
 - **Combined Pipeline**: Optimized for batch processing
-
-### Hardware Requirements
-- **Minimum**: 4GB RAM, any CPU
-- **Recommended**: 8GB+ RAM, GPU for faster RoBERTa processing
-- **Storage**: ~2GB for models and dependencies
-
-### Tested Platforms
-- **Operating Systems**: Windows 10/11, macOS, Linux (Ubuntu, CentOS)
-- **Python Versions**: 3.8, 3.9, 3.10, 3.11
-- **Hardware**: CPU-only and GPU-accelerated systems
-
-## Troubleshooting
-
-### Common Issues
-
-**ImportError: No module named 'transformers'**
-```bash
-pip install --upgrade transformers torch
-```
-
-**NLTK Data Not Found**
-```bash
-python -c "import nltk; nltk.download('vader_lexicon'); nltk.download('punkt')"
-```
-
-**Memory Error with RoBERTa**
-- Reduce batch size in processing
-- Use CPU-only mode: set `CUDA_VISIBLE_DEVICES=""`
-- Close other applications to free memory
-
-**File Not Found Error**
-- Ensure CSV file path is correct
-- Check file permissions
-- Verify CSV has required columns: 'Review Text' and 'Rating'
-
-### Getting Help
-- Check the error message carefully
-- Ensure all dependencies are installed
-- Try running with sample data first
-- Open an issue on GitHub with error details
-
-## Contributing
-
-Contributions are welcome! Please feel free to:
-- Report bugs and issues
-- Suggest new features
-- Submit pull requests
-- Improve documentation
-
-## License
-
-This project is open source and available under the [MIT License](https://opensource.org/licenses/MIT).
-
-## Author
-
-**Aksha** - [akshat7776](https://github.com/akshat7776)
-
-Feel free to reach out for questions, suggestions, or collaborations!
-
-## Acknowledgments
-
-- [NLTK](https://www.nltk.org/) for VADER sentiment analysis
-- [Hugging Face](https://huggingface.co/) for transformer models
-- [Cardiff NLP](https://github.com/cardiffnlp) for the RoBERTa sentiment model
-- Women's Clothing E-Commerce Reviews dataset contributors
-
----
-
-**Star this repository if you found it helpful!**
